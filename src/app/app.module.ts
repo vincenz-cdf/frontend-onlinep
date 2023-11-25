@@ -10,6 +10,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { WelcomeContentComponent } from './welcome-content/welcome-content.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonsComponent } from './buttons/buttons.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ButtonsComponent } from './buttons/buttons.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
