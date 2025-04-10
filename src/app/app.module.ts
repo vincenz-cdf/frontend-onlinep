@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { WelcomeContentComponent } from './welcome-content/welcome-content.compo
 import { FormsModule } from '@angular/forms';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { ToastrModule } from 'ngx-toastr';
+import { TimerComponent } from './timer/timer.component';
+import { PortraitComponent } from './portrait/portrait.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { ToastrModule } from 'ngx-toastr';
     HeaderComponent,
     LoginFormComponent,
     WelcomeContentComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    TimerComponent,
+    PortraitComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     ToastrModule.forRoot(),
   ],

@@ -1,0 +1,32 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Digital+7&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="timer-background" [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}">
+        <div class="timer-content">
+            <p class="timer-text">John Doe, Freelance developer since</p>
+            <div class="timer">
+                <div class="time-section">
+                    <span class="time">{{ years }}</span>
+                    <span class="label">years</span>
+                </div>
+                <div class="time-section">
+                    <span class="time">{{ days }}</span>
+                    <span class="label">days</span>
+                </div>
+                <div class="time-section">
+                    <span class="time">{{ hours }}</span>
+                    <span class="label">hours</span>
+                </div>
+                <div class="time-section">
+                    <span class="time">{{ minutes }}</span>
+                    <span class="label">minutes</span>
+                </div>
+                <div class="time-section">
+                    <span class="time">{{ seconds }}</span>
+                    <span class="label">seconds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

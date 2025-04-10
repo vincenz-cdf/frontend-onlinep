@@ -2,11 +2,25 @@
     <div class="col-4">
         <div class="card" style="width: '18rem'">
             <div class="card-body">
-                <h5 class="card-title">Backend response</h5>
-                <p class="card-text">Content:</p>
-                <ul>
-                    <li *ngFor="let line of data">{{line}}</li>
-                </ul>
+                <div *ngIf="!isSubmitted" @fadeInOut>
+                    <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName" placeholder="Fullname" />
+                    <input type="text" id="title" name="title" class="form-control mt-1" [(ngModel)]="title" placeholder="Situation" />
+                    <!-- Drag and Drop file input -->
+                    <div *ngIf="!imagePreview; else imagePreviewTemplate" class="file-drop-area mt-2" (drop)="onFileDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+                        <span class="file-message">Drag and drop a file here or click</span>
+                        <input type="file" class="file-input" id="fileInput" aria-describedby="inputGroupFileAddon" (change)="onFileChange($event)">
+                    </div>
+                    <ng-template #imagePreviewTemplate>
+                        <img [src]="imagePreview" class="img-preview">
+                    </ng-template>
+    
+                    <button type="button" class="btn btn-success mt-2" (click)="onSubmit()">Submit</button>
+                </div>
+
+                <!-- Success Message -->
+                <div *ngIf="isSubmitted" class="alert alert-success mt-2" @fadeInOut>
+                    Page created successfully! -> <a href="/4Ma9AZferq5" target="_blank">your personal page</a>
+                </div>
             </div>
         </div>
     </div>
